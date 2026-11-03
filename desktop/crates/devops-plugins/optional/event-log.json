@@ -1,0 +1,31 @@
+{
+  "id": "qingshan.event-log",
+  "name": "事件日志入口",
+  "version": "0.1.0",
+  "description": "把 Windows 事件查看器与常用排障文档放到插件页，便于快速跳转。",
+  "author": "青衫工具箱",
+  "icon": "link",
+  "tags": ["运维", "日志"],
+  "enabledByDefault": false,
+  "homepage": "https://learn.microsoft.com/windows-server/administration/windows-commands/wevtutil",
+  "contributes": {
+    "overview": [
+      {
+        "id": "event-log-links",
+        "title": "事件日志入口",
+        "kind": "links",
+        "body": "打开事件查看器或查看微软官方文档。",
+        "links": [
+          {
+            "label": "事件查看器文档",
+            "url": "https://learn.microsoft.com/windows-server/administration/windows-commands/eventvwr"
+          },
+          {
+            "label": "wevtutil 命令",
+            "url": "https://learn.microsoft.com/windows-server/administration/windows-commands/wevtutil"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "qingshan.health-check",
+  "name": "健康巡检",
+  "version": "0.1.0",
+  "description": "基于当前采样检查内存、系统盘与权限状态。",
+  "author": "青衫工具箱",
+  "homepage": "https://github.com/DragonTsunami/qingshan-toolbox",
+  "icon": "pulse",
+  "enabledByDefault": true,
+  "contributes": {
+    "overview": [
+      {
+        "id": "health",
+        "title": "今日健康巡检",
+        "kind": "health",
+        "body": "只读取概览快照，不产生额外系统调用。",
+        "health": {
+          "memoryMaxPercent": 85,
+          "systemDiskMaxPercent": 90,
+          "requireElevation": false
+        }
+      }
+    ]
+  }
+}

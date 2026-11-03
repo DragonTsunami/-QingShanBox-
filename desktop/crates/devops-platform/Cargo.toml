@@ -1,0 +1,18 @@
+[package]
+name = "devops-platform"
+description = "Windows platform adapters for 青衫工具箱"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+base64.workspace = true
+devops-core.workspace = true
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde_json.workspace = true
+sysinfo.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+windows.workspace = true
+quick-xml = "0.42"

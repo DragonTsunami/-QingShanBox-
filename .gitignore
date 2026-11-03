@@ -1,0 +1,17 @@
+# 依赖与构建产物
+node_modules/
+dist/
+coverage/
+target/
+.tmp/
+.npm-cache/
+
+# 桌面端交付目录（构建产物，不入库）
+QingshanWorkbench/
+QingshanWorkbench-*/
+desktop/src-tauri/webview/
+
+# 本地环境
+*.local
+.DS_Store
+Thumbs.db

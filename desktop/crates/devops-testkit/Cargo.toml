@@ -1,0 +1,10 @@
+[package]
+name = "devops-testkit"
+description = "Deterministic mock adapters and fixtures for 青衫工具箱 framework tests"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+devops-core.workspace = true

@@ -1,0 +1,15 @@
+[package]
+name = "devops-app"
+description = "Application service layer shared by desktop commands and tests"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+devops-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+devops-testkit.workspace = true

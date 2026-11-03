@@ -1,0 +1,50 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/devops-core",
+    "crates/devops-platform",
+    "crates/devops-app",
+    "crates/devops-plugins",
+    "crates/devops-testkit",
+    "src-tauri",
+]
+
+[workspace.package]
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.77"
+license = "MIT"
+authors = ["DeepSeek DevOps"]
+
+[workspace.dependencies]
+base64 = "0.22"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+sysinfo = "0.33"
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Graphics_Gdi",
+    "Win32_System_Registry",
+    "Win32_System_Services",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+devops-core = { path = "crates/devops-core" }
+devops-platform = { path = "crates/devops-platform" }
+devops-app = { path = "crates/devops-app" }
+devops-plugins = { path = "crates/devops-plugins" }
+devops-testkit = { path = "crates/devops-testkit" }
+
+[profile.dev]
+incremental = true
+
+[profile.dev.package."*"]
+opt-level = 1
+
+[profile.release]
+lto = "thin"
+strip = true
+codegen-units = 1

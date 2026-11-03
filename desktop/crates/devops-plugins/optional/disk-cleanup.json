@@ -1,0 +1,25 @@
+{
+  "id": "qingshan.disk-cleanup",
+  "name": "磁盘清理清单",
+  "version": "0.1.0",
+  "description": "把常见临时文件位置整理成巡检清单，打开目录后自行确认清理。",
+  "author": "青衫工具箱",
+  "icon": "shield",
+  "tags": ["运维", "清理"],
+  "enabledByDefault": false,
+  "contributes": {
+    "overview": [
+      {
+        "id": "cleanup",
+        "title": "磁盘清理清单",
+        "kind": "checklist",
+        "body": "只列出位置，不自动删除文件。",
+        "items": [
+          "检查用户临时目录 %TEMP%",
+          "检查 Windows 更新缓存",
+          "检查浏览器下载目录中的旧安装包"
+        ]
+      }
+    ]
+  }
+}

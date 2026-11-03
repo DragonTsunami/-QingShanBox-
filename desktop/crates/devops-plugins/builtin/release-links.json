@@ -1,0 +1,34 @@
+{
+  "id": "qingshan.release-links",
+  "name": "版本与文档",
+  "version": "0.1.0",
+  "description": "把仓库、Release 与插件文档放到概览上。",
+  "author": "青衫工具箱",
+  "homepage": "https://github.com/DragonTsunami/qingshan-toolbox",
+  "icon": "link",
+  "enabledByDefault": false,
+  "contributes": {
+    "overview": [
+      {
+        "id": "links",
+        "title": "项目入口",
+        "kind": "links",
+        "body": "从仓库、Release 和插件文档继续。",
+        "links": [
+          {
+            "label": "GitHub 仓库",
+            "url": "https://github.com/DragonTsunami/qingshan-toolbox"
+          },
+          {
+            "label": "最新 Release",
+            "url": "https://github.com/DragonTsunami/qingshan-toolbox/releases/latest"
+          },
+          {
+            "label": "插件文档",
+            "url": "https://github.com/DragonTsunami/qingshan-toolbox/blob/main/docs/plugins.md"
+          }
+        ]
+      }
+    ]
+  }
+}

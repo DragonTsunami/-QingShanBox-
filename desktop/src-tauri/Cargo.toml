@@ -1,0 +1,43 @@
+[package]
+name = "qingshan-workbench"
+description = "青衫工作台 — DevOps 监控与容器配置工作台"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+default-run = "qingshan-workbench"
+
+[lib]
+name = "qingshan_workbench_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+# The Tauri shell has no unit tests; behavior is covered by OpsService tests and
+# window-level E2E. A Rust test harness would need WebView2Loader at startup.
+test = false
+doctest = false
+
+[[bin]]
+name = "qingshan-workbench"
+path = "src/main.rs"
+test = false
+
+[features]
+default = []
+# Enabled for distributable builds: embeds `frontendDist` instead of loading
+# `devUrl`. Tauri CLI normally injects this for `tauri build`; direct cargo
+# builds must pass `--features custom-protocol`.
+custom-protocol = ["tauri/custom-protocol"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+serde.workspace = true
+serde_json.workspace = true
+devops-core.workspace = true
+devops-platform.workspace = true
+devops-app.workspace = true
+devops-plugins.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_Security", "Win32_System_Threading", "Win32_UI_WindowsAndMessaging"] }
